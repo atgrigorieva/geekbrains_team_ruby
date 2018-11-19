@@ -1,0 +1,58 @@
+\033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m [CMD]\033[0m\033[31m\033[47m [OPTIONS] \033[0m \n \n
+\033[1;30m\033[46m CMD: \033[0m 
+\n\n
+
+\t \033[1;30m\033[47m start \033[0m - start server\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m start\033[0m \n
+\n\n
+
+\t \033[1;30m\033[47m bash \033[0m [options] - can run sh script which given in options\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m bash\033[0m\033[31m\033[47m echo "hello world" \033[0m \n
+\n\n
+
+\t \033[1;30m\033[47m rails \033[0m [options] - can run rails command which given in options \n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m rails\033[0m\033[31m\033[47m g model MyModelName \033[0m \n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m rails\033[0m\033[31m\033[47m c \033[0m \n
+\n\n
+
+\t \033[1;30m\033[47m migrate \033[0m - this param can create db if her not exists\n\t\t and next this doing migrations\n
+\t\t if db exist, then just doing migrations\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m migrate \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m recreate_db \033[0m - this param drop db and doing migration and seed\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m recreate_db \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m seed \033[0m - fills your database with test data\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m seed \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m rspec \033[0m - starting tests for rails controllers and models  \n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m rspec \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m yarn \033[0m - run yarn with some options\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m yarn \033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m yarn \033[0m\033[31m\033[47m install \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m bundle \033[0m - run bundler with some options\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m bundle \033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m bundle \033[0m\033[31m\033[47m install \033[0m\n
+\n\n
+
+\t \033[1;30m\033[47m help \033[0m - write this text again\n
+\t\033[1;36m examples:\033[0m\n
+\t\t \033[1;36m\033[47m ./serverUp\033[0m\033[1;30m\033[47m help \033[0m\n
+\n\n
+Almost all commands expect, the server is started\n

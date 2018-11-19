@@ -1,0 +1,36 @@
+version: '3'
+services:
+  postgres:
+    container_name: parking_database
+    image: postgres:10
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pgdb
+  parking:
+    container_name: parking_server
+    build:
+      context: .
+      dockerfile: Main.dockerfile
+    volumes:
+      - ./parking/:/Carparking
+    entrypoint:
+      - ./entrypoint.sh
+    ports:
+      - "80:3000"
+      - "3035:3035"
+    links:
+      - postgres
+  # nginx:
+  #   container_name: nginx_parking
+  #   build: 
+  #     context: .
+  #     dockerfile: Nginx.dockerfile
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   restart: always
+  #   links:
+  #     - parking

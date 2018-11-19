@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autoparking</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <% if user_signed_in? %>
+      <% if current_user.role.name == "operator" %>
+        <%= javascript_pack_tag 'operator'%>
+      <% elsif current_user.role.name == "owner" %>
+        <%= javascript_pack_tag 'owner'%>
+      <% end %>
+    <% elsif params["controller"] == "devise/sessions"%>
+      <%= javascript_pack_tag 'login' %>
+    <% end %>
+  </head>
+
+  <body>
+    <header>
+      <% if user_signed_in? %>
+        <div>
+        <% if current_user.role.name == "operator"%>
+          <%= Operator.find_by(user: current_user).name %>
+        <% else %>
+          <%= "#{Owner.find_by(user: current_user).first_name} #{Owner.find_by(user: current_user).second_name} #{Owner.find_by(user: current_user).last_name}" %>
+        <% end %>
+        </div>
+        <div>
+          <%= current_user.email %>
+        </div>
+        <div>
+          <%= link_to t('label.logout'), destroy_user_session_path, method: :delete %>
+        </div>
+      <%end%>
+    </header>
+    
+    <%= yield %>
+  </body>
+</html>
